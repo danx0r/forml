@@ -6,8 +6,14 @@ static_context = {
     'scripts': 'static/scripts/',
 }
 
-def home(request):
+def form1(request):
     context = dict(static_context)
-    from testform import form as testform
-    context['form1'] = testform.html()
+    from forms import form1
+    context['form1'] = form1.html()
+    return render(request, 'forml/templates/index.html', context)
+
+def form2(request):
+    context = dict(static_context)
+    from forms import form2
+    context['form1'] = form2.html()
     return render(request, 'forml/templates/index.html', context)
