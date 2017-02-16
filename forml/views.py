@@ -8,6 +8,6 @@ static_context = {
 
 def home(request):
     context = dict(static_context)
-    from testform import testform
+    from testform import form as testform
     context['form1'] = testform.html()
     return render(request, 'forml/templates/index.html', context)
