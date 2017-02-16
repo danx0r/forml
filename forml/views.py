@@ -15,7 +15,7 @@ def home(request):
     f1.br()
     f1.text("gender stuff:")
     f1.br()
-    f1.input('radio', "gender", "male")
+    f1.input('radio', "gender", "male", checked=True)
     f1.input('radio', "gender", "female")
     f1.input('radio', "gender", "other")
     f1.br(2)
