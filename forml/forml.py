@@ -41,13 +41,13 @@ class form(object):
         if cnt == 1:
             self.rows.append("<notreallyatag/>")
         for i in range(cnt-1):
-            self.rows.append("</br>")
+            self.rows.append("<br/>")
     
     def html(self):
         s = "\n<form><br/>\n"
         for r in self.rows:
             if "<" in r and ">" in r and r.strip().find('<input type="radio"') != 0:       #line break except text
-                s += r + '</br>\n'
+                s += r + '<br/>\n'
             else:
                 s += r + '\n'
         s += "</form><br/>\n"
