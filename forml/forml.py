@@ -23,6 +23,13 @@ class form(object):
             row += '/>'
         self.rows.append(row)
         
+    def dropdown(self, name, *options):
+        self.rows.append('  <select name="%s">' % name)
+        for opt in options:
+            row = '    <option value="%s">%s</option>' % (opt, opt)
+            self.rows.append(row)
+        self.rows.append('  </select>')
+        
     def submit(self, text = "OK"):
         row = '  <button type="submit">%s</button>' % (text)
         self.rows.append(row)
