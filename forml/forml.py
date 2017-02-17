@@ -44,13 +44,17 @@ class form(object):
             self.rows.append("<br/>")
     
     def html(self):
-        s = "\n<form><br/>\n"
+        s = "\n<form>\n"
         for r in self.rows:
-            if "<" in r and ">" in r and r.strip().find('<input type="radio"') != 0:       #line break except text
-                s += r + '<br/>\n'
-            else:
+            if "<" not in r:                                        #no brk for text
                 s += r + '\n'
-        s += "</form><br/>\n"
+            elif r.strip().find('<input type="radio"') == 0:        #or radio
+                s += r + '\n'
+            elif r.strip().find('display:none') > 0:                #or hidden
+                s += r + '\n'
+            else:                                                   #'Kk, line brk
+                s += r + '<br/>\n'
+        s += "</form>\n"
         return s
         
 if __name__ == "__main__":

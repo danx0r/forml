@@ -17,8 +17,8 @@ def form1_do(field1, field2, gender):
 form1.do = form1_do
 
 form2 = forml.form()
+form2.input('text', "field1", value="hidden text", style="display:none")
 form2.text("enter another load of stuff:")
-form2.input('text', "field1", value="This time...")
 form2.input('text', "field2", placeholder="please please hold my hand")
 form2.br()
 form2.text("age:")
