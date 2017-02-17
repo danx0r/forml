@@ -12,8 +12,12 @@ form1.input('radio', "gender", "other")
 form1.br(2)
 form1.submit("OKPRESSME")
 
+bug = 10
 def form1_do(field1, field2, gender):
+    global bug
+    bug += 1
     print "form1_do:", field1, field2, gender
+    return bug
 form1.do = form1_do
 
 form2 = forml.form()

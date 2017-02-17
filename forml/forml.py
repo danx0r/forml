@@ -43,8 +43,8 @@ class form(object):
         for i in range(cnt-1):
             self.rows.append("<br/>")
     
-    def html(self):
-        s = "\n<form>\n"
+    def html(self, bugg=0):
+        s = "\n<form>bugg=%d\n" % bugg
         for r in self.rows:
             if "<" not in r:                                        #no brk for text
                 s += r + '\n'
